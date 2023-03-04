@@ -1,0 +1,83 @@
+name: Daguerre
+
+options:
+  bundleIdPrefix: dev.crakac.daguerre
+  deploymentTarget:
+    iOS: 14.1
+
+settings:
+  base:
+    SWIFT_VERSION: 5.7
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+    DEVELOPMENT_TEAM: 322YN6UULG
+    CODE_SIGN_STYLE: Automatic
+    CLANG_CXX_LANGUAGE_STANDARD: gnu++20
+    DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+
+schemes:
+  App:
+    build:
+      targets:
+        App: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - name: Tests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+  UITest:
+    build:
+      targets:
+        App: test
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - App
+      targets:
+        - name: Tests
+          parallelizable: true
+          randomExecutionOrder: true
+        - name: UITests
+
+targets:
+  App:
+    type: application
+    platform: iOS
+    sources:
+      - App
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: dev.crakac.daguerre
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleName: Daguerre
+        LSRequiresIPhoneOS: YES
+        UILaunchScreen: ""
+  Tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests
+    dependencies:
+      - target: App
+    info:
+      path: Tests/Info.plist
+  UITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UITests
+    dependencies:
+      - target: App
+    info:
+      path: UITests/Info.plist
