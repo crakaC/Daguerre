@@ -71,5 +71,3 @@ targets:
       - UITests
     dependencies:
       - target: App
-    info:
-      path: UITests/Info.plist
