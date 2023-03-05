@@ -2,7 +2,7 @@ PRODUCT_NAME := Daguerre
 
 .PHONY: gen
 gen:
-	mint run xcodegen
+	mint run xcodegen --project . --project-root . --spec xcodegen/project.yml
 	xed .
 
 .PHONY: archive
