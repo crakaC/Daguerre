@@ -11,7 +11,7 @@ struct CameraView: View {
     @StateObject private var viewModel: CameraViewModel = .init()
 
     var body: some View {
-        VStack {
+        ZStack {
             switch viewModel.permissionState {
             case .notDetermined:
                 Button(
@@ -28,7 +28,7 @@ struct CameraView: View {
                 }
             case .authorized:
                 Text("Granted")
-
+                CameraPreview()
             case .restricted:
                 Text("Restricted")
             }
