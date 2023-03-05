@@ -4,7 +4,13 @@ import SwiftUI
 struct DaguerreApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("Hello, world!")
+            CameraView()
         }
+    }
+}
+
+struct DaguerreApp_Preview: PreviewProvider {
+    static var previews: some View {
+        CameraView()
     }
 }

@@ -5,11 +5,12 @@
 //  Created by Kosuke on 2023/03/05.
 //
 
-@testable import App
 import XCTest
+
+@testable import App
 
 final class SampleTest: XCTestCase {
     func testExample() throws {
-        XCTAssertEqual(10, [1, 2, 3, 4].reduce(0, {$0 + $1}))
+        XCTAssertEqual(10, [1, 2, 3, 4].reduce(0, { $0 + $1 }))
     }
 }

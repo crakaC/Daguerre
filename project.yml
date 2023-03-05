@@ -57,12 +57,6 @@ targets:
       - App
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: dev.crakac.daguerre
-    info:
-      path: App/Info.plist
-      properties:
-        CFBundleName: Daguerre
-        LSRequiresIPhoneOS: YES
-        UILaunchScreen: ""
   Tests:
     type: bundle.unit-test
     platform: iOS
@@ -70,8 +64,6 @@ targets:
       - Tests
     dependencies:
       - target: App
-    info:
-      path: Tests/Info.plist
   UITests:
     type: bundle.ui-testing
     platform: iOS

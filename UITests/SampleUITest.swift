@@ -5,7 +5,6 @@
 //  Created by Kosuke on 2023/03/05.
 //
 
-
 import XCTest
 
 final class SampleUITest: XCTestCase {
